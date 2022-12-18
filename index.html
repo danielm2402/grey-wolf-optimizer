@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./styles.css" rel="stylesheet">
+
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+
+</head>
+
+<body>
+
+    <h1>Grey Wolf Optimizer</h1>
+    <h2>$$f(x) = x^2 -xy+y^2+2x+4y+3$$<h2>
+            <div style="display: flex;">
+                <canvas id="principal" width="1000px" height="500px" style="border:1px solid #000;"></canvas>
+                <div style="margin-left: 100px;">
+                    <h4 id="iteraciones">Iteración</h4>
+                    <h5>Población Inicial</h5>
+                    <table id="poblacion" style="width: 500px; border: 1px solid #000;">
+                        <tr style="border: 1px solid #000;">
+                            <th>x</th>
+                            <th>y</th>
+                            <th>f(x,y)</th>
+                        </tr>
+
+
+                    </table>
+
+                </div>
+            </div>
+            <button onclick="wolf()">Next iteration</button>
+            <div style="display: flex; width: 50%; justify-content: space-around; flex-direction: column;">
+                <div id="poblacionActual">
+                    <table style="width: 500px; border: 1px solid #000;">
+                        <tr style="border: 1px solid #000;">
+                            <th>x</th>
+                            <th>y</th>
+                            <th>f(x,y)</th>
+                        </tr>
+
+
+                    </table>
+                </div>
+
+
+            </div>
+
+            <script src="./index.js"></script>
+</body>
+
+</html>
