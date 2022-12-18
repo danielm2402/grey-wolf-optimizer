@@ -206,7 +206,7 @@ function paintWolves() {
 
 function paintData() {
     var it = document.getElementById("iteraciones")
-    it.innerText = "Iteración: " + (iteration - 1)
+    it.innerText = "Iteration: " + (iteration - 1)
 }
 
 function paintTable() {
