@@ -1,5 +1,5 @@
-var iteracion = 1
-var maxIteracion = 200
+var iteration = 1
+var maxIteration = 200
 const canvas = document.getElementById("principal")
 var img = document.createElement("img");
 img.src = "wolf.png";
@@ -20,12 +20,12 @@ var p = [
 
 
 p.forEach((wolf) => {
-    wolf.v = evaluar(wolf.x, wolf.y)
+    wolf.v = evaluate(wolf.x, wolf.y)
 })
 
 
-ordenar()
-painTable()
+sort()
+paintTable()
 
 
 
@@ -34,7 +34,7 @@ var alpha, beta, delta
 var a
 
 function wolf() {
-    a = 2 * (1 - (iteracion / maxIteracion))
+    a = 2 * (1 - (iteration / maxIteration))
     alpha = p[0]
     beta = p[1]
     delta = p[2]
@@ -73,7 +73,7 @@ function wolf() {
         newPos.y = (y1, y2, y3) / 3
 
 
-        newPos.v = evaluar(newPos.x, newPos.y)
+        newPos.v = evaluate(newPos.x, newPos.y)
 
         if ((newPos.x < 5 && newPos.x > -5) && (newPos.y < 5 && newPos.y > -5)) {
             if (newPos.v < wolf.v) {
@@ -86,12 +86,12 @@ function wolf() {
     })
 
     console.log(p)
-    iteracion++
-    ordenar()
+    iteration++
+    sort()
 
 }
 
-function ordenar() {
+function sort() {
     p.sort((a, b) => {
         if (a.v == b.v) {
             return 0
@@ -104,10 +104,10 @@ function ordenar() {
 
     paintWolves()
     paintData()
-    painTable2()
+    paintTable2()
 }
 
-function evaluar(x, y) {
+function evaluate(x, y) {
     return x * x - x * y + y * y + 2 * x + 4 * y + 3
 }
 
@@ -206,10 +206,10 @@ function paintWolves() {
 
 function paintData() {
     var it = document.getElementById("iteraciones")
-    it.innerText = "Iteración: " + (iteracion - 1)
+    it.innerText = "Iteración: " + (iteration - 1)
 }
 
-function painTable() {
+function paintTable() {
     var table = document.getElementById("poblacion")
 
     p.forEach((wolf, index) => {
@@ -303,7 +303,7 @@ function painTable() {
     })
 }
 
-function painTable2() {
+function paintTable2() {
 
     const cantidad = document.getElementById("poblacionActual").getElementsByTagName("table")[0].remove()
 
